@@ -73,8 +73,8 @@ const Cart = () => {
                   })}
                 </ul>
               </div>
-              <hr />
-              <div className="mt-4 flex w-full justify-between items-center">
+              {/* <hr className="my-3 border" /> */}
+              <div className="bg-gray-200 p-3 mt-8 font-bold flex w-full justify-between items-center">
                 <p>Total: </p>
                 <p>$ {parseFloat(totalPrice.toFixed(2))}</p>
               </div>
