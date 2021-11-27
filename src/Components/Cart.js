@@ -7,7 +7,7 @@ const Cart = () => {
   const dispatch = useDispatch();
   return (
     <div>
-      <div className="w-10/12 mx-auto ">
+      <div className="min-h-screen w-10/12 mx-auto ">
         <div className="h-full flex flex-col bg-white shadow-xl ">
           <div className="flex-1 py-6 overflow-y-auto px-4 sm:px-6">
             <div className="flex items-start justify-between">
