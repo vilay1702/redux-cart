@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 const Cart = () => {
   const { cart, total } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
-
   return (
     <div>
       <div className="w-10/12 mx-auto ">
@@ -25,7 +24,7 @@ const Cart = () => {
                   {cart.map((item) => {
                     const { id, title, image, price, count } = item;
                     return (
-                      <li className="py-6 flex ">
+                      <li key={id} className="py-6 flex ">
                         <div className="flex-shrink-0 w-24 h-24 border border-gray-200 rounded-md overflow-hidden">
                           <img
                             src={image}
@@ -47,7 +46,7 @@ const Cart = () => {
                             <div></div>
                             <span className="relative z-0 inline-flex shadow-sm rounded-md">
                               <button
-                                onClick={() => dispatch(removeFromCart(id))}
+                                onClick={() => dispatch(removeFromCart(item))}
                                 type="button"
                                 className="relative inline-flex items-center px-4 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500"
                               >
