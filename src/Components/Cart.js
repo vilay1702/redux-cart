@@ -1,9 +1,9 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { removeFromCart, addToCart } from "../actions/shop";
+import { removeFromCart, addToCart, clearCart } from "../actions/shop";
 import { Link } from "react-router-dom";
 const Cart = () => {
-  const { cart, total } = useSelector((state) => state.cart);
+  const { cart, totalCount, totalPrice } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   return (
     <div>
@@ -16,7 +16,7 @@ const Cart = () => {
               </h1>
             </div>
 
-            {total <= 0 && <h1>No items in the Cart</h1>}
+            {totalCount <= 0 && <h1>No items in the Cart</h1>}
 
             <div className="mt-8">
               <div className="flow-root">
@@ -73,9 +73,23 @@ const Cart = () => {
                   })}
                 </ul>
               </div>
+              <hr />
+              <div className="mt-4 flex w-full justify-between items-center">
+                <p>Total: </p>
+                <p>$ {parseFloat(totalPrice.toFixed(2))}</p>
+              </div>
             </div>
           </div>
         </div>
+        <Link to="/">
+          <button
+            type="button"
+            onClick={() => dispatch(clearCart())}
+            className="w-full mt-4 justify-center inline-flex items-center px-2.5 py-1.5 border border-transparent text-xl font-medium rounded shadow-sm text-white bg-gray-800 hover:bg-gray-900 "
+          >
+            Checkout
+          </button>
+        </Link>
       </div>
     </div>
   );

@@ -18,3 +18,9 @@ export const setProducts = (products) => {
     payload: products,
   };
 };
+
+export const clearCart = () => {
+  return {
+    type: "CLEAR_CART",
+  };
+};

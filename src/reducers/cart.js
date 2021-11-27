@@ -1,4 +1,4 @@
-const initialState = { total: 0, cart: [] };
+const initialState = { totalCount: 0, totalPrice: 0, cart: [] };
 
 export const cart = (state = initialState, { type, payload }) => {
   switch (type) {
@@ -6,10 +6,18 @@ export const cart = (state = initialState, { type, payload }) => {
       try {
         if (payload["count"] >= 1) {
           payload["count"] += 1;
-          return { total: state.total + 1, cart: state.cart };
+          return {
+            totalCount: state.totalCount + 1,
+            totalPrice: state.totalPrice + parseFloat(payload.price.toFixed(2)),
+            cart: state.cart,
+          };
         } else {
           payload["count"] = 1;
-          return { total: state.total + 1, cart: [...state.cart, payload] };
+          return {
+            totalCount: state.totalCount + 1,
+            totalPrice: state.totalPrice + parseFloat(payload.price.toFixed(2)),
+            cart: [...state.cart, payload],
+          };
         }
       } catch {}
       return state;
@@ -25,8 +33,14 @@ export const cart = (state = initialState, { type, payload }) => {
         }
         return item;
       });
-      return { total: state.total - 1, cart: newCart };
+      return {
+        totalCount: state.totalCount - 1,
+        totalPrice: state.totalPrice - parseFloat(payload.price.toFixed(2)),
+        cart: newCart,
+      };
 
+    case "CLEAR_CART":
+      return { totalCount: 0, totalPrice: 0, cart: [] };
     default:
       return state;
   }
