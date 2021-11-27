@@ -14,5 +14,5 @@
 ## You can
 1. Add items to your cart
 2. Delete items from your cart
-
+3. Checkout and clear cart
 
