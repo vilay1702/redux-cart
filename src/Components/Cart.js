@@ -85,7 +85,7 @@ const Cart = () => {
           <button
             type="button"
             onClick={() => dispatch(clearCart())}
-            className="w-full mt-4 justify-center inline-flex items-center px-2.5 py-1.5 border border-transparent text-xl font-medium rounded shadow-sm text-white bg-gray-800 hover:bg-gray-900 "
+            className="w-full my-4 justify-center inline-flex items-center px-2.5 py-1.5 border border-transparent text-xl font-medium rounded shadow-sm text-white bg-gray-800 hover:bg-gray-900 "
           >
             Checkout
           </button>
