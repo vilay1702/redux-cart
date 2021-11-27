@@ -7,7 +7,23 @@ const Header = () => {
   return (
     <header className="sticky top-0 z-30 bg-gray-800 text-2xl flex justify-between items-center px-8 text-white py-4">
       <div className="logo">
-        <Link to="/"> My Shop</Link>
+        <Link className="flex items-center" to="/">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
+            />
+          </svg>
+          <span>My Shop</span>
+        </Link>
       </div>
       <Link to="/cart">
         <div className="cart flex items-center">

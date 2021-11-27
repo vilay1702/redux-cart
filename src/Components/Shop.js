@@ -22,11 +22,13 @@ const Shop = () => {
   }, []);
   return (
     <>
-      {isLoading ? (
-        <div className="loader animate-spin"></div>
-      ) : (
-        <Products products={products}></Products>
-      )}
+      <div className="min-h-screen">
+        {isLoading ? (
+          <div className="loader animate-spin"></div>
+        ) : (
+          <Products products={products}></Products>
+        )}
+      </div>
     </>
   );
 };

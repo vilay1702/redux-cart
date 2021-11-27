@@ -1,6 +1,6 @@
 import React from "react";
 import { HashRouter as Router, Route, Routes } from "react-router-dom";
-import { Header, Shop, ProductPage, Cart } from "./Components";
+import { Header, Shop, ProductPage, Cart, Footer } from "./Components";
 import "./css/index.scss";
 
 const App = () => {
@@ -14,6 +14,7 @@ const App = () => {
           <Route path="cart" element={<Cart />}></Route>
           <Route path="*" element={<Shop />}></Route>
         </Routes>
+        <Footer />
       </Router>
     </>
   );

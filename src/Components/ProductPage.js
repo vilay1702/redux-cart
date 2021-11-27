@@ -24,7 +24,7 @@ const ProductPage = () => {
   const { title, price, category, description, image, rating } = product;
   return (
     <>
-      <section className="w-full min-h-full py-10 bg-gray-200">
+      <section className="w-full min-h-screen py-10 bg-gray-200">
         <section className="sm:flex mx-auto bg-white p-4 w-10/12 shadow-lg">
           {/* Product Image  */}
           <div className="lg:w-2/6 w-full">
