@@ -1,13 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import {
-  Header,
-  Shop,
-  Products,
-  Product,
-  ProductPage,
-  Cart,
-} from "./Components";
+import { Header, Shop, ProductPage, Cart } from "./Components";
 import "./css/index.scss";
 
 const App = () => {

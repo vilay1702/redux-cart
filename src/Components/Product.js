@@ -7,7 +7,7 @@ const Product = ({ product }) => {
   const dispatch = useDispatch();
   const [count, setCount] = useState(0);
   const [isClicked, setIsClicked] = useState(false);
-  const { id, title, price, category, description, image } = product;
+  const { id, title, price, category, image } = product;
 
   const cartButton = () => {
     dispatch(addToCart(product));

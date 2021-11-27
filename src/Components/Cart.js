@@ -21,7 +21,7 @@ const Cart = () => {
 
             <div className="mt-8">
               <div className="flow-root">
-                <ul role="list" className="-my-6 divide-y divide-gray-200">
+                <ul className="-my-6 divide-y divide-gray-200">
                   {cart.map((item) => {
                     const { id, title, image, price, count } = item;
                     return (

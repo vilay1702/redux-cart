@@ -22,9 +22,9 @@ export const cart = (state = initialState, { type, payload }) => {
             item.count -= 1;
             return item;
           }
-        } else {
-          return item;
+          return;
         }
+        return item;
       });
       return { total: state.total - 1, cart: newCart };
 
